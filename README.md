@@ -2,8 +2,6 @@
 
 ## Overview
 
-- this project is our site, https://xenoncommunity.dev , written in html language.
-
 - we will add features and complete this readme.md file.
 
 
