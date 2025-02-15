@@ -31,7 +31,7 @@
 }
 
 .top-bar nav ul li a:hover {
-    color: #a3a3a3;
+    color: #ffffff;
 }
 
 body, html {
@@ -67,18 +67,6 @@ body, html {
     font-size: 2.5rem;
     color: #a3a3a3;
     margin: 10px 0;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
-}
-
-.website-info-text h1{
-    font-size: 2.5rem;
-    color: #a3a3a3;
-    margin: 10px 0;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
-}
-
-.website-info-text p{
-    color: #a3a3a3;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
@@ -147,7 +135,7 @@ body, html {
         opacity: 0;
     }
     50% {
-        opecity: 0.5;
+        opacity: 0.5;
     }
     100% {
         opacity: 1;
@@ -175,11 +163,32 @@ body, html {
     }
 }
 
-.website-info-text {
+.card-text {
+    color: #a3a3a3;
+    margin: 10px 0;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+}
+
+.card-text h1{
+    font-size: 2.5rem;
+}
+
+.website-info-text {
+    color: #a3a3a3;
+    margin: 10px 0;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.website-info-text h1{
+    font-size: 2.5rem;
 }
 
 .card {

@@ -1,171 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Projects - XenonCommunity</title>
-    <link rel="stylesheet" href="projects.css" />
-  </head>
-  <body>
-    <header class="top-bar">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#contact-section">Contact Us</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Projects - XenonCommunity</title>
+  <link rel="stylesheet" href="projects.css" />
+</head>
+<body>
+<header class="top-bar">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#contact-section">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <div class="projects-container">
-      <h1>Our Projects</h1>
-      <p>Here is a list of our active projects:</p>
+<div class="projects-container" id="projects-container">
+  <h1>Our Projects</h1>
+  <p>Here is a list of our active projects:</p>
+</div>
 
-      <div class="project-card">
-        <div class="project-info">
-          <h2>XenonCord</h2>
-          <p>A lightweight, easy to use, scalable BungeeCord instance.</p>
-          <a
-            href="https://github.com/XenonCommunity/XenonCord"
-            target="_blank"
-            class="project-link"
-            >View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-info">
-          <h2>RawSocketWrapper</h2>
-          <p>Raw Socket Wrapper is a Go library designed to simplify the interface for creating and manipulating raw network packets.</p>
-          <a
-                  href="https://github.com/XenonCommunity/RawSocketWrapper"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-info">
-          <h2>MCUltraLight-1.8.9</h2>
-          <p>A lightweight implementation of UltraLight into java.</p>
-          <a
-                  href="https://github.com/XenonCommunity/MCUltraLight-1.8.9"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-info">
-          <h2>XenonCommunityBot</h2>
-          <p>Our discord bot, written in python.</p>
-          <a
-                  href="https://github.com/XenonCommunity/XenonCommunityBot"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-info">
-          <h2>PacketLib</h2>
-          <p>more information will be soon available.</p>
-          <a
-                  href="https://github.com/XenonCommunity/PacketLib"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-info">
-          <h2>SteamDownloaderAPI</h2>
-          <p>more information will be soon available.</p>
-          <a
-                  href="https://github.com/XenonCommunity/SteamDownloaderAPI"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-info">
-          <h2>Event-Core</h2>
-          <p>Cleaned version of event core by xenon community</p>
-          <p>An Utility Minecraft Core Plugin That Helps You Create And Announce Minecraft Events.</p>
-          <a
-                  href="https://github.com/XenonCommunity/Event-Core"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-info">
-          <h2>LegionJoinMessages</h2>
-          <p>A simple spigot plugin that works on 1.8.9-1.21.1 and changes join messages.</p>
-         <a
-                  href="https://github.com/XenonCommunity/LegionJoinMessages"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-info">
-          <h2>LegionVelocityCommandBlocker</h2>
-          <p>A simple command blocker, for velocity.</p>
-          <a
-                  href="https://github.com/XenonCommunity/LegionVelocityCommandBlocker"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
+<section id="contact-section" class="contact-section">
+  <div class="contact-box">
+    <a href="https://discord.gg/e7mn6uuCmy" target="_blank">
+      <h2>Contact Us</h2>
+    </a>
+  </div>
+</section>
+<script>
+  const projectsContainer = document.getElementById('projects-container');
 
-      <p>Here is a list of our archived projects:</p>
+  async function fetchProjects() {
+    try {
+      const response = await fetch(`https://api.github.com/orgs/SyNdicateFoundation/repos`);
+      const projects = await response.json();
+      displayProjects(projects);
+    } catch (error) {
+      console.error('Error fetching projects:', error);
+      projectsContainer.innerHTML = '<p>Failed to load projects. Please try again later.</p>';
+    }
+  }
 
-      <div class="project-card">
-        <div class="project-info">
-          <h2>JavaSimpleStresser</h2>
-          <p>JSS - A simple java stresser for Layer4.</p>
-          <a
-                  href="https://github.com/XenonCommunity/JavaSimpleStresser"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-info">
-          <h2>ExtremeAntiBot-deprecated</h2>
-          <p>[ARCHIVED] will be transformed into a velocity instance.</p>
-          <a
-                  href="https://github.com/XenonCommunity/ExtremeAntiBot-deprecated"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-info">
-          <h2>LegionVelocityLog4jFixer</h2>
-          <p>[USELESS] [LEGACY] A plugin to block log4j.</p>
-          <a
-                  href="https://github.com/XenonCommunity/LegionVelocityLog4jFixer"
-                  target="_blank"
-                  class="project-link"
-          >View on GitHub</a>
-        </div>
-      </div>
+  function displayProjects(projects) {
+    const activeProjects = projects.filter(project => !project.archived);
+    const archivedProjects = projects.filter(project => project.archived);
 
-    </div>
-    <!-- Contact box -->
-    <!-- <section id="contact-box" class="contact-section"> -->
-        <section id="contact-section" class="contact-section">
-      <div class="contact-box">
-        <a href="https://discord.gg/e7mn6uuCmy" target="_blank">
-          <h2>Contact Us</h2>
-        </a>
-      </div>
-    </section>
-  </body>
+    projectsContainer.innerHTML += '';
+    activeProjects.forEach(project => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.innerHTML = `
+        <div class="project-info">
+          <h2>${project.name}</h2>
+          <p>${project.description || 'No description available.'}</p>
+          <a href="${project.html_url}" target="_blank" class="project-link">View on GitHub</a>
+        </div>
+      `;
+      projectsContainer.appendChild(card);
+    });
+
+    if (archivedProjects.length > 0) {
+      const archivedHeader = document.createElement('p');
+      archivedHeader.innerText = "Here is a list of our archived projects:";
+      projectsContainer.appendChild(archivedHeader);
+
+      archivedProjects.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `
+          <div class="project-info">
+            <h2>${project.name}</h2>
+            <p>${project.description || 'No description available.'}</p>
+            <a href="${project.html_url}" target="_blank" class="project-link">View on GitHub</a>
+          </div>
+        `;
+        projectsContainer.appendChild(card);
+      });
+    }
+  }
+
+  fetchProjects();
+</script>
+
+</body>
 </html>

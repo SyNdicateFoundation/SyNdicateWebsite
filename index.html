@@ -34,7 +34,7 @@
     </div>
 
     <div class="container">
-        <div class="website-info-text">
+        <div class="card-text">
             <div class='card'>
                 <p>
                     Ethical Development
@@ -53,25 +53,16 @@
     </div>
 
     <div class="website-info-text">
-        <h1><br>
-            🚨 Reporting Issues</h1>
+        <h1><br>🚨 Reporting Issues</h1>
+        <h1><br>🌐 Stay Connected</h1>
     </div>
     <div class="container">
-        <div class="website-info-text">
+        <div class="card-text">
             <div class='card'>
                 <p>
                     If you encounter any issues or have concerns about our foundation's impact, please reach out to us. We take all issues seriously and are committed to resolving them promptly.
                 </p>
             </div>
-        </div>
-    </div>
-
-    <div class="website-info-text">
-        <h1>🌐 Stay Connected</h1>
-    </div>
-
-    <div class="container">
-        <div class="website-info-text">
             <div class='card'>
                 <p>
                     Stay updated on our latest projects and foundation news. Join our Discord server.
@@ -83,7 +74,7 @@
     <div class="website-info-text">
         <h1>🙌 Thank You</h1>
     </div>
-    <div class="website-info-text">
+    <div class="card-text">
         <div class='card'>
             <p>
                 Thank you for being a part of the SyNdicate foundation! Together, let's build a future of innovation and collaboration.
@@ -106,6 +97,20 @@
             </p>
         </div>
     </section>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const repoNumberElement = document.getElementById('repo-number');
+
+            fetch('https://api.github.com/orgs/SyNdicateFoundation/repos')
+                .then(response => response.json())
+                .then(data => {
+                    repoNumberElement.textContent = data.length;
+                })
+                .catch(error => {
+                    console.error('Error fetching repository     count:', error);
+                    repoNumberElement.textContent = 'Error';
+                });
+        });
+    </script>
 </body>
 </html>
