@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">sg
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="desktop.css" media="(min-width: 769px)">
 </head>
 <body>
+
+<div class="mouse"></div>
 <header class="top-bar">
     <nav>
         <ul>
@@ -43,14 +45,15 @@
 </footer>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const repoNumberElement = document.getElementById('repo-number');
-        repoNumberElement.textContent = '0';
-
         fetch('https://api.github.com/orgs/SyNdicateFoundation/repos')
             .then(response => response.json())
             .then(data => {
-                repoNumberElement.textContent = data.length;
+                document.getElementById('repo-number').textContent = data.length;
             });
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        document.querySelector('.mouse').style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
     });
 </script>
 </body>
