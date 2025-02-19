@@ -19,10 +19,6 @@ body {
     padding: 10px 0;
 }
 
-.top-bar:hover {
-    animation: scaleetext 0.5s forwards;
-}
-
 .top-bar .logo {
     width: 3%;
     height: auto;
@@ -49,7 +45,6 @@ body {
 .top-bar a:hover {
     color: red;
 }
-
 /* footer start */
 .bottom-bar {
     background-color: #000;
@@ -63,24 +58,19 @@ body {
     font: bold 12px "Lucida Grande", Helvetica, Arial, sans-serif;
     padding: 10px 0;
 }
-
 .bottom-bar:hover {
     animation: scaletextless 0.5s forwards;
 }
-
 .bottom-bar h2, .bottom-bar p, .bottom-bar a {
     color: #a3a3a3;
     text-decoration: none;
 }
-
 .bottom-bar h2:hover, .bottom-bar p:hover, .bottom-bar a:hover {
     color: red;
 }
-
 .bottom-bar a:hover {
     color: #494949;
 }
-
 /* middle start */
 .welcome-container {
     font-size: 50px;
@@ -95,7 +85,6 @@ body {
     flex-wrap: wrap;
     gap: 20px;
 }
-
 .welcome-container .mid-text {
     height: 30vh;
     display: flex;
@@ -129,14 +118,3 @@ body {
     color: #a3a3a3;
 }
 
-/* animation start */
-@keyframes scaleetext {
-    100% {
-        font-size: 15px;
-    }
-}
-@keyframes scaletextless {
-    100% {
-        font-size: 14px;
-    }
-}

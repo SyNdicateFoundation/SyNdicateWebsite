@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SyNdicateFoundation</title>
-    <link rel="stylesheet" type="text/css" href="mobile.css" media="handheld"/>
-    <link rel="stylesheet" type="text/css" href="desktop.css" media="screen"/>
-
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+    <link rel="stylesheet" href="desktop.css" media="(min-width: 769px)">
 </head>
 <body>
 <header class="top-bar">
@@ -25,7 +24,7 @@
         Welcome to SyNdicate Foundation!
     </div>
     <p id="repo-count" class="repo-count">
-        Currently, we have <span id="repo-number">Loading...</span> repositories available.
+        Currently, we have <span id="repo-number"></span> repositories available.
     </p>
     <div class="button-container">
         <a href="more-info.html" class="button">More information</a>

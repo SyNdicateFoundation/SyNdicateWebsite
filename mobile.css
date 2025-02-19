@@ -7,7 +7,7 @@ body {
 
 /* header start */
 .top-bar {
-    background-color: #ff0000;
+    background-color: #000;
     position: fixed;
     top: 0;
     left: 0;
@@ -19,12 +19,8 @@ body {
     padding: 10px 0;
 }
 
-.top-bar:hover {
-    animation: scaleetext 0.5s forwards;
-}
-
 .top-bar .logo {
-    width: 3%;
+    width: 10%;
     height: auto;
     position: absolute;
     top: 50%;
@@ -97,12 +93,15 @@ body {
 }
 
 .welcome-container .mid-text {
-    height: 30vh;
+    min-height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 20px;
 }
+
 .welcome-container p{
     font-size: 13px;
     margin-top: -5%;
@@ -127,16 +126,4 @@ body {
 .button:hover {
     background-color: red;
     color: #a3a3a3;
-}
-
-/* animation start */
-@keyframes scaleetext {
-    100% {
-        font-size: 15px;
-    }
-}
-@keyframes scaletextless {
-    100% {
-        font-size: 14px;
-    }
 }
