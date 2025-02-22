@@ -106,14 +106,5 @@
         <h2>Contact us</h2>
     </a>
 </footer>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('https://api.github.com/orgs/SyNdicateFoundation/repos')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('repo-number').textContent = data.length;
-            });
-    });
-</script>
 </body>
 </html>
