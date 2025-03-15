@@ -40,18 +40,5 @@
         Happy coding! 😉 [12/31/2023 - 1402/11/10] 3:05 PM IRST (Asia/Tehran) | Sourcecode licenses may apply
     </p>
 </footer>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('https://api.github.com/orgs/SyNdicateFoundation/repos')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('repo-number').textContent = data.length;
-            });
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        document.querySelector('.mouse').style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-</script>
 </body>
 </html>
